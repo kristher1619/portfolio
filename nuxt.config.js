@@ -52,5 +52,17 @@ export default {
   content: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+
+    postcss: {
+      plugins: {
+
+        'postcss-nested': {},
+      }
+    }
+
+  },
+  server: {
+    port: 3200
+  }
 }
