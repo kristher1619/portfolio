@@ -1,0 +1,7 @@
+.page-body {
+  max-width: 600px;
+  @apply tw-mx-auto tw-px-4;
+  @screen md {
+    @apply md:tw-px-0;
+  }
+}

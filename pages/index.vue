@@ -1,29 +1,33 @@
 <template>
   <div>
-    <header class="tw-bg-gray-100 tw-py-4 tw-mb-16">
-      <div class="tw-container">
-        <h1>DripCoder</h1>
+    <header class="tw-bg-gray-50 tw-py-4">
+      <div class="page-body">
+        <h1 class="tw-font-bold tw-text-3xl">drip<span class="tw-text-yellow-500">Coder</span></h1>
       </div>
     </header>
-    <div class="page-body tw-px-4 md:tw-px-0">
-      <div
-        class="tw-flex tw-items-center tw-mb-16 banner tw-flex-col md:tw-flex-row"
-      >
-        <img src="/images/avatar.svg" class="tw-mr-8 tw-mb-4" width="124px" />
-        <div>
-          <h1 class="tw-text-2xl tw-font-bold">Hey! I'm Kristher Vidal</h1>
-          <p class="tw-mb-2 tw-pr-8">
-            and I help companies build their web apps through my skills in
-            modern web development.
-          </p>
-          <button
-            class="tw-flex tw-text-white tw-bg-green-500 tw-pl-4 tw-pr-8 tw-py-2 tw-rounded-md"
-          >
-            <img src="/icons/mail.svg" alt="" class="tw-mr-2" />
-            <span> Contact </span>
-          </button>
+    <div class="tw-bg-gray-100  tw-border-b tw-border-gray-200 tw-py-12 tw-mb-8">
+      <div class="page-body">
+        <div
+          class="tw-flex tw-items-center  banner tw-flex-col md:tw-flex-row"
+        >
+          <img
+            src="/images/avatar.svg"
+            class="tw-mr-8 tw-mb-4 tw-shadow-lg tw-rounded-full"
+            width="124px"
+          />
+          <div>
+            <h1 class="tw-text-2xl tw-font-bold">Hey! I'm Kristher Vidal</h1>
+            <p class="tw-mb-2 tw-pr-8">
+              and I help companies build their web apps through my skills in
+              modern web development.
+            </p>
+            <popup-email></popup-email>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="page-body">
+
       <section class="about-me tw-mb-8">
         <h1 class="tw-text-2xl tw-font-bold tw-mb-8">About Me 👨🏻‍💻</h1>
         <p class="tw-mb-4">
@@ -34,8 +38,24 @@
           With skills in Laravel, Angular, Vue with a mix of basic DevOps, I
           helped companies developed and deploy their web apps in the cloud.
         </p>
+
+        <div class="tw-flex">
+          <a class="tw-inline-flex  tw-mr-2 tw-py-1 tw-px-4 tw-border tw-border-gray-100"
+             href="https://www.linkedin.com/in/kristher-vidal/" target="_blank">
+            <img src="/icons/linkedin.svg" alt="" width="16px" class="tw-mr-2">
+            LinkedIn
+          </a>
+
+          <a class="tw-inline-flex  tw-items-center tw-py-1  tw-px-4 tw-border tw-border-gray-100"
+             href="https://github.com/kristher1619" target="_blank">
+            <img src="/icons/github.svg" alt="" width="16px" class="tw-mr-2">
+            Github
+          </a>
+        </div>
+
+
       </section>
-      <hr class="tw-w-1/12 tw-mb-2 tw-border-t-8 tw-border-black" />
+      <hr class="tw-w-1/12 tw-mb-2 tw-border-t-8 tw-border-black"/>
       <section>
         <h1 class="tw-text-2xl tw-font-bold tw-mb-8">Tech Stacks 🖥</h1>
         <section
@@ -45,7 +65,7 @@
         >
           <div class="footer-border" :style="{ background: stack.color }"></div>
           <h1 class="tw-font-bold tw-text-2xl tw-flex tw-mb-3">
-            <img :src="stack.icon" alt="" class="tw-mr-2" />
+            <img :src="stack.icon" alt="" class="tw-mr-2" width="32px"/>
             {{ stack.title }}
           </h1>
           <p>
@@ -54,32 +74,38 @@
           <div v-show="false" class="tw-flex tw-justify-end">
             <a href="" class="tw-flex">
               <span> Read posts </span>
-              <img src="icons/arrow-right.svg" alt="" class="tw-ml-2" />
+              <img src="icons/arrow-right.svg" alt="" class="tw-ml-2"/>
             </a>
           </div>
         </section>
 
         <section class="other-tech-stacks tw-mb-4">
-          <h1 class="tw-text-2xl tw-font-bold tw-mb-8">Other Tech Stacks</h1>
+          <h1 class="tw-text-2xl tw-font-bold tw-mb-8">Other Tech and Tools I Use</h1>
           <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4">
             <div
               v-for="stack in otherTechStacks"
               :key="stack.icon"
               class="tw-flex tw-p-2 tw-border-gray-200 tw-border tw-rounded-md"
             >
-              <img :src="stack.icon" alt="" class="tw-mr-4" width="24px" />
+              <img :src="stack.icon" alt="" class="tw-mr-4" width="24px"/>
               <span class="label"> {{ stack.label }}</span>
             </div>
           </div>
         </section>
       </section>
     </div>
+    <site-footer></site-footer>
+
   </div>
 </template>
 
 <script>
+import SiteFooter from "~/components/SiteFooter";
+import PopupEmail from "~/components/PopupEmail";
+
 export default {
   name: 'IndexPage',
+  components: { PopupEmail, SiteFooter },
   data() {
     return {
       mainTechStacks: [
@@ -88,27 +114,35 @@ export default {
           title: 'Laravel',
           color: '#FF0000',
           content:
-            'The best PHP Framework handsdown. Laravel gives you the best of flexibility and simplicity. Build your apps fast with out of the box support for multiple technologies'
+            'The best PHP Framework hands down. Laravel gives you the best of flexibility and simplicity. Build your apps fast with out of the box support for multiple technologies'
         },
         {
           icon: 'icons/angular.svg',
           title: 'Angular',
           color: '#F50526',
           content:
-            'The best PHP Framework handsdown. Laravel gives you the best of flexibility and simplicity. Build your apps fast with out of the box support for multiple technologies'
+            'Ah yes! The grand daddy of all modern frameworks!. ' +
+            'If you are the OOP kind of guy, you will definitely love this framework.' +
+            'For me, this is the javascript framework that makes sense on how you architect your enterprise application.'
         },
         {
           icon: 'icons/vue.svg',
           title: 'VueJs',
           color: '#00B373',
           content:
-            'The best PHP Framework handsdown. Laravel gives you the best of flexibility and simplicity. Build your apps fast with out of the box support for multiple technologies'
+            'If you are overwhelmed with Angular, Vue got you covered. ' +
+            'Developers love VueJS for its simplicity and beautiful syntax. ' +
+            'Many prefer Vue because it can be used to build enterprise apps without the massive boilerplate.'
         }
       ],
       otherTechStacks: [
         {
           icon: '/icons/graphql.svg',
           label: 'GraphQL'
+        },
+        {
+          icon: '/icons/rxjs.svg',
+          label: 'RxJs'
         },
         {
           icon: '/icons/tailwind.svg',
@@ -141,19 +175,27 @@ export default {
         {
           icon: '/icons/typescript.svg',
           label: 'Typescript'
+        },
+        {
+          icon: '/icons/c-sharp.svg',
+          label: 'C#'
+        },
+        {
+          icon: '/icons/nuxt.svg',
+          label: 'NuxtJS'
         }
       ]
-    }
+    };
+  },
+  head: {
+    title: 'Drip Coder - Kristher Vidal'
   }
-}
+};
 </script>
 <style lang="postcss" scoped>
-.page-body {
-  @apply tw-mx-auto;
-  max-width: 600px;
-}
 .showcase {
   @apply tw-border-gray-200 tw-border tw-rounded-md tw-p-4 tw-mb-8 tw-relative tw-bg-white;
+
   .footer-border {
     display: block;
     content: '';
