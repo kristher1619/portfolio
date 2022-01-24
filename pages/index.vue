@@ -1,98 +1,110 @@
 <template>
   <div>
-    <header class="tw-bg-gray-50 tw-py-4">
-      <div class="page-body">
-        <h1 class="tw-font-bold tw-text-3xl">drip<span class="tw-text-yellow-500">Coder</span></h1>
+    <header class="tw-py-4 tw-bg-green-500 navigation-bar">
+      <div class="tw-container">
+          <h1 class="tw-font-bold tw-text-3xl tw-text-white">Drip Coder(WIP)</span></h1>
       </div>
     </header>
-    <div class="tw-bg-gray-100  tw-border-b tw-border-gray-200 tw-py-12 tw-mb-8">
-      <div class="page-body">
-        <div
-          class="tw-flex tw-items-center  banner tw-flex-col md:tw-flex-row"
-        >
-          <img
-            src="/images/avatar.svg"
-            class="tw-mr-8 tw-mb-4 tw-shadow-lg tw-rounded-full"
-            width="124px"
-          />
+    <div class="hero-block">
+      <div class="tw-container">
+        <div class="md:tw-w-2/3">
+          <div
+            class="tw-flex tw-items-center  tw-flex-col md:tw-flex-row"
+          >
           <div>
-            <h1 class="tw-text-2xl tw-font-bold">Hey! I'm Kristher Vidal</h1>
-            <p class="tw-mb-2 tw-pr-8">
-              and I help companies build their web apps through my skills in
-              modern web development.
-            </p>
-            <popup-email></popup-email>
+          <h1 class="tw-text-5xl tw-font-bold tw-mb-8">
+              Let’s
+             <span class="tw-bg-green-500 tw-inline-block tw-py-2 tw-px-1 tw-text-white">
+              Build Apps
+               </span>
+              <span class="tw-block">
+                Together
+              </span>
+          </h1>
+
+        <p class="tw-mb-4 tw-text-lg">
+            Hey! I am Kristher, A Full Stack Developer from 🇵🇭.
+            With more than 5 Years of Experience in Web Development, I helped teams and companies build exciting apps on the Web.
+          </p>
+          <p class="tw-mb-4">
+            Do you need help with your next big project? Smash the Contact Button!
+          </p>
+          <popup-email></popup-email>
+          </div>
+            <!-- <img
+              src="/images/avatar.svg"
+              class="tw-mr-8 tw-mb-4 tw-shadow-lg tw-rounded-full"
+              width="124px"
+            /> -->
           </div>
         </div>
       </div>
     </div>
-    <div class="page-body">
-
-      <section class="about-me tw-mb-8">
-        <h1 class="tw-text-2xl tw-font-bold tw-mb-8">About Me 👨🏻‍💻</h1>
-        <p class="tw-mb-4">
-          Developing Websites since 2013, I have gained profound skills in
-          building websites using modern tools and technologies.
-        </p>
-        <p class="tw-mb-4">
-          With skills in Laravel, Angular, Vue with a mix of basic DevOps, I
-          helped companies developed and deploy their web apps in the cloud.
-        </p>
-
-        <div class="tw-flex">
-          <a class="tw-inline-flex  tw-mr-2 tw-py-1 tw-px-4 tw-border tw-border-gray-100"
-             href="https://www.linkedin.com/in/kristher-vidal/" target="_blank">
-            <img src="/icons/linkedin.svg" alt="" width="16px" class="tw-mr-2">
-            LinkedIn
-          </a>
-
-          <a class="tw-inline-flex  tw-items-center tw-py-1  tw-px-4 tw-border tw-border-gray-100"
-             href="https://github.com/kristher1619" target="_blank">
-            <img src="/icons/github.svg" alt="" width="16px" class="tw-mr-2">
-            Github
-          </a>
-        </div>
-
-
-      </section>
-      <hr class="tw-w-1/12 tw-mb-2 tw-border-t-8 tw-border-black"/>
-      <section>
-        <h1 class="tw-text-2xl tw-font-bold tw-mb-8">Tech Stacks 🖥</h1>
-        <section
-          v-for="stack in mainTechStacks"
-          :key="stack.title"
-          class="showcase"
-        >
-          <div class="footer-border" :style="{ background: stack.color }"></div>
-          <h1 class="tw-font-bold tw-text-2xl tw-flex tw-mb-3">
-            <img :src="stack.icon" alt="" class="tw-mr-2" width="32px"/>
-            {{ stack.title }}
-          </h1>
-          <p>
-            {{ stack.content }}
+    <div class="tw-container">
+      <div class="page-body">
+        <section class="about-me tw-mb-8">
+          <h1 class="tw-text-2xl tw-font-bold tw-mb-8">About Me 👨🏻‍💻</h1>
+          <p class="tw-mb-4">
+            Developing Websites since 2013, I have gained profound skills in
+            building websites using modern tools and technologies.
           </p>
-          <div v-show="false" class="tw-flex tw-justify-end">
-            <a href="" class="tw-flex">
-              <span> Read posts </span>
-              <img src="icons/arrow-right.svg" alt="" class="tw-ml-2"/>
+          <p class="tw-mb-4">
+            With skills in Laravel, Angular, Vue with a mix of basic DevOps, I
+            helped companies developed and deploy their web apps in the cloud.
+          </p>
+          <div class="tw-flex">
+            <a
+      class="tw-inline-flex  tw-mr-2 tw-py-1 tw-px-4 tw-border tw-border-gray-100"
+               href="https://www.linkedin.com/in/kristher-vidal/" target="_blank">
+              <img src="/icons/linkedin.svg" alt="" width="16px" class="tw-mr-2">
+              LinkedIn
+            </a>
+            <a
+      class="tw-inline-flex  tw-items-center tw-py-1  tw-px-4 tw-border tw-border-gray-100"
+               href="https://github.com/kristher1619" target="_blank">
+              <img src="/icons/github.svg" alt="" width="16px" class="tw-mr-2">
+              Github
             </a>
           </div>
         </section>
-
-        <section class="other-tech-stacks tw-mb-4">
-          <h1 class="tw-text-2xl tw-font-bold tw-mb-8">Other Tech and Tools I Use</h1>
-          <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4">
-            <div
-              v-for="stack in otherTechStacks"
-              :key="stack.icon"
-              class="tw-flex tw-p-2 tw-border-gray-200 tw-border tw-rounded-md"
-            >
-              <img :src="stack.icon" alt="" class="tw-mr-4" width="24px"/>
-              <span class="label"> {{ stack.label }}</span>
+        <hr class="tw-w-1/12 tw-mb-2 tw-border-t-8 tw-border-black"/>
+        <section>
+          <h1 class="tw-text-2xl tw-font-bold tw-mb-8">Tech Stacks 🖥</h1>
+          <section
+            v-for="stack in mainTechStacks"
+            :key="stack.title"
+            class="showcase"
+          >
+            <div class="footer-border" :style="{ background: stack.color }"></div>
+            <h1 class="tw-font-bold tw-text-2xl tw-flex tw-mb-3">
+              <img :src="stack.icon" alt="" class="tw-mr-2" width="32px"/>
+              {{ stack.title }}
+            </h1>
+            <p>
+              {{ stack.content }}
+            </p>
+            <div v-show="false" class="tw-flex tw-justify-end">
+              <a href="" class="tw-flex">
+                <span> Read posts </span>
+                <img src="icons/arrow-right.svg" alt="" class="tw-ml-2"/>
+              </a>
             </div>
-          </div>
+          </section>
+          <section class="other-tech-stacks tw-mb-4">
+            <h1 class="tw-text-2xl tw-font-bold tw-mb-8">Other Tech and Tools I Use</h1>
+            <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4">
+              <div
+                v-for="stack in otherTechStacks"
+                :key="stack.icon"
+                class="tw-flex tw-p-2 tw-border-gray-200 tw-border tw-rounded-md"
+              >
+                <img :src="stack.icon" alt="" class="tw-mr-4" width="24px"/>
+                <span class="label"> {{ stack.label }}</span>
+              </div>
+            </div>
+          </section>
         </section>
-      </section>
+      </div>
     </div>
     <site-footer></site-footer>
 
@@ -207,5 +219,16 @@ export default {
     z-index: -1;
     @apply tw-rounded-bl-md tw-rounded-br-md;
   }
+}
+.navigation-bar {
+  height: 60px;
+}
+.hero-block {
+  @apply tw-border-b tw-border-gray-200 tw-py-12 tw-mb-8 tw-relative tw-flex tw-items-center;
+  @screen lg {
+    background: url(/icons/header-bg.svg) no-repeat right center;
+    height: 550px;
+  }
+
 }
 </style>

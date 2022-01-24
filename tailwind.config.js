@@ -178,7 +178,10 @@ module.exports = {
       200: '2',
     },
     container: {
-      center: true
+      center: true,
+      padding: {
+        DEFAULT: "2rem"
+      }
     },
     content: {
       none: 'none',
